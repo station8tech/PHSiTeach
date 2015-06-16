@@ -10,7 +10,7 @@
 <preference name="webviewbounce" value="false" />
 
 <preference name="deployment-target" value="7.0" />
-<preference name="target-device" value="handset" />
+<preference name="target-device" value="universal" />
 
 
 
