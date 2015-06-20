@@ -18,8 +18,25 @@
    
     
     <div data-role="page" id="page" >
-    <div data-role="header" data-theme="a" data-add-back-btn="true">
-       <h1>PHSiTeach</h1>
+	    
+	      <div data-role="panel" data-display="overlay" id="sidebar" data-theme="a" data-position="right" >
+                        <ul data-role="listview">
+	                        <li data-icon="false">  <a data-ajax="false" href="search.html" data-transition="slide" data-icon="info">Search</a></li>
+                            <li><a href="index.html">Teacher List</a></li>
+                            <li><a href=javascript:openGoogle("http://www.providencehigh.net")>Providencehigh.net</a></li>
+                            <li><a href=javascript:openGoogle("http://familylink.providencehigh.net/Login.aspx")>Grades</a></li>
+                        </ul>
+                        
+                    </div>   
+       
+    <div data-role="header" data-theme="a" data-tap-toggle="false" data-id="persistent" data-position="fixed">
+       <a href="#sidebar" data-icon="ion-navicon-round" data-iconpos="notext"></a>
+       <h1 class="header-title">PHSiTeach</h1>
+       
+                   
+                    
+                  
+       
          </div>
         
          <ul data-role="listview" data-inset="false" data-theme="a" id="teacherList"></ul>
@@ -28,8 +45,21 @@
     
     
      <div data-role="page" id="page2" >
-    <div data-role="header" data-theme="a" data-add-back-btn="true">
+    <div data-role="header" data-theme="a" data-id="persistent" data-position="fixed">
        <h1>PHSiTeach</h1>
+         <a href="" onClick="history.go(-1)"  data-icon="back" data-inline="true">Back</a>
+                       <a href="search.html" data-transition="slide" data-icon="info">Search</a>
+                    
+                    <div data-role = "navbar" data-theme="a">
+                        <ul>
+                            <li><a href="index.html">Teacher List</a></li>
+                            <li><a href=javascript:openGoogle("http://www.providencehigh.net")>Providencehigh.net</a></li>
+                            <li><a href=javascript:openGoogle("http://familylink.providencehigh.net/Login.aspx")>Grades</a></li>
+                        </ul>
+                        
+                    </div>
+       
+       
          </div>
         
          <ul data-role="listview"  data-inset="false" data-theme="a" id="classList"></ul>
@@ -37,7 +67,7 @@
   
   
   <div data-role="page" id="page3" >
-    <div data-role="header" data-theme="a" data-add-back-btn="true">
+    <div data-role="header" data-theme="a" data-id="persistent" data-position="fixed">
        <h1>PHSiTeach</h1>
          </div>
         
@@ -46,7 +76,7 @@
     
     
       <div data-role="page" id="page4" >
-    <div data-role="header" data-theme="a" data-add-back-btn="true">
+    <div data-role="header" data-theme="a" data-id="persistent" data-position="fixed">
        <h1>PHSiTeach page 4</h1>
          </div>
         
