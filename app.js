@@ -28,7 +28,7 @@ $(document).ready(function(){
 		
 					
 					
-					listHtml += "<li data-id=" + value.id + "><a href='#'>" + value.lastname +  " , "+ value.firstname + "</a></li>";
+					listHtml += "<li data-id=" + value.id + "><a href='#'><b>" + value.lastname +  " , "+ value.firstname + "</b></a></li>";
 					
 				});//end each
 			
@@ -46,7 +46,7 @@ $(document).ready(function(){
 		$(document).on("click", "#teacherList >li", function() {
 			
 		teacher_id = $(this).closest("li").attr("data-id");
-		$.mobile.changePage($("#page2"));
+		$.mobile.changePage('#page2',{transition: 'slide'});
 			//console.log(teacher_id);
 			});//click event for list
 			
@@ -59,7 +59,7 @@ $(document).ready(function(){
 			 var json = $.parseJSON(response);
 			 $.each(json, function(key, value){  
 			
-			classHtml += "<li data-id=" + value.id + "><a href='#'>" + value.test + "</a></li>";
+			classHtml += "<li data-id=" + value.id + "><a href='#'><b>" + value.test + "</b></a></li>";
 			 
 			 });//end each
 			 $("#classList").html(classHtml);
@@ -75,8 +75,8 @@ $(document).ready(function(){
 		$(document).on("click", "#classList >li", function() {
 			
 		class_id = $(this).closest("li").attr("data-id");
-		$.mobile.changePage($("#page3"));
-			console.log(class_id);
+		$.mobile.changePage('#page3',{transition: 'slide'});
+		
 			});//click event for list
 
 	$(document).on('pagebeforeshow', '#page3', function() {  
@@ -87,7 +87,7 @@ $(document).ready(function(){
 			 $.each(json, function(key, value){  
 			
 			
-			contentHtml += "<li data-id=" + value.id + " data-content_id =" + value.content +"><a href='#'>" + value.Type + "</a></li>";
+			contentHtml += "<li data-id=" + value.id + " data-content_id =" + value.content +"><a href='#'><b>" + value.Type + "</b></a></li>";
 			 
 			 });//end each
 			 $("#contentList").html(contentHtml);
@@ -105,7 +105,7 @@ $(document).ready(function(){
 		$(document).on("click", "#contentList >li", function() {
 			
 		content_id = $(this).closest("li").attr("data-content_id");
-		$.mobile.changePage($("#page4"));
+		$.mobile.changePage('#page4',{transition: 'slide'});
 			console.log(class_id);
 			console.log(content_id);
 			});//click event for list	
@@ -119,7 +119,7 @@ $(document).ready(function(){
 			 $.each(json, function(key, value){  
 			
 			
-			documentHtml += "<li><a href='#' onclick=window.open('" + value.showlink + "','_blank','location=yes,toolbar=yes,allowInlineMediaPlayback=yes')>" + value.date + "&nbsp;&nbsp;-&nbsp;&nbsp;" + value.name + "</a><a href='#' onclick=window.open('" + value.showlink + "','_system')></a></li>";
+			documentHtml += "<li><a href='#' onclick=window.open('" + value.showlink + "','_blank','location=yes,toolbar=yes,allowInlineMediaPlayback=yes')><b>" + value.date + "&nbsp;&nbsp;-&nbsp;&nbsp;" + value.name + "</b></a><a href='#' onclick=window.open('" + value.showlink + "','_system')></a></li>";
 			 
 			 });//end each
 			 $("#documentList").html(documentHtml);
