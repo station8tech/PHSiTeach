@@ -63,7 +63,7 @@ $(document).ready(function(){
 			 
 			 });//end each
 			 $("#classList").html(classHtml);
-			 $('ul').listview('refresh');
+			  $('ul').listview('refresh');
 			 
 		 });//end page 
 		 
@@ -119,7 +119,7 @@ $(document).ready(function(){
 			 $.each(json, function(key, value){  
 			
 			
-			documentHtml += "<li><a href='#' onclick=window.open('" + value.showlink + "','_blank','location=yes,toolbar=yes,allowInlineMediaPlayback=yes')><b>" + value.date + "&nbsp;&nbsp;-&nbsp;&nbsp;" + value.name + "</b></a><a href='#' onclick=window.open('" + value.showlink + "','_system')></a></li>";
+			documentHtml += "<li><a href='#' onclick=window.open('" + value.showlink + "','_blank','toolbar=yes,allowInlineMediaPlayback=yes')><b>" + value.date + "&nbsp;&nbsp;-&nbsp;&nbsp;" + value.name + "</b></a><a href='#' onclick=window.open('" + value.showlink + "','_system')></a></li>";
 			 
 			 });//end each
 			 $("#documentList").html(documentHtml);
