@@ -8,7 +8,7 @@ $(document).ready(function(){
 			var listHtml = "";
 			
 			var url = "http://www.stat8.net/iTeachTest/iTeacherDoc.cfc?method=getintList&returnformat=json"
-			$.get(url, function(response){
+			$.post(url, function(response){
 			var json = $.parseJSON(response);
 			
 			
@@ -42,7 +42,7 @@ $(document).ready(function(){
 			$(document).on('pagebeforeshow', '#page2', function() {  
          var url = "http://www.stat8.net/iTeachTest/iTeacherDoc.cfc?method=getarch&returnformat=json"
 		 var classHtml = "";
-		 $.get(url,{ searchName: teacher_id } , function(response){
+		 $.post(url,{ searchName: teacher_id } , function(response){
 			 
 			 var json = $.parseJSON(response);
 			 
@@ -75,7 +75,7 @@ $(document).ready(function(){
 	$(document).on('pagebeforeshow', '#page3', function() {  
          var url = "http://www.stat8.net/jquery/iTeacherDoc.cfc?method=getcontent&returnformat=json"
 		 var contentHtml = "";
-		 $.get(url,{ searchName: class_id } , function(response){
+		 $.post(url,{ searchName: class_id } , function(response){
 			
 			 var json = $.parseJSON(response);
 			 
@@ -115,7 +115,7 @@ $(document).ready(function(){
 	$(document).on('pagebeforeshow', '#page4', function() {  
          var url = "http://www.stat8.net/jquery/iTeacherDoc.cfc?method=getdocs&returnformat=json"
 		 var documentHtml = "";
-		 $.get(url,{ searchName: class_id, content: content_id } , function(response){
+		 $.post(url,{ searchName: class_id, content: content_id } , function(response){
 			 var json = $.parseJSON(response);
 			 
 			  if (json.length == 0){
