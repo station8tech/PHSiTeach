@@ -15,19 +15,6 @@ $(document).ready(function(){
 			$.each(json, function(key, value){  
 				
 				
-			//	listHtml += "<li><a href='#' onclick=window.plugins.streamingMedia.playAudio('" + value.link + "')><img class='ui-circle ui-mini ui-padding' src='"+ value.image +"'><h2>" + value.name +  "</h2><p><strong>"+ value.title + "</strong></p><p><strong>" + value.date +"</strong><div class='fb-share-button' data-href='"+ value.link +"' data-layout='icon'></div></p></a>   </li>";
-				
-				
-			//this work for media	listHtml += "<li><a href='#' onclick=window.plugins.streamingMedia.playAudio('" + value.link + "')><img class='ui-circle ui-mini ui-padding' src='"+ value.image +"'><h2>" + value.name +  "</h2><p><strong>"+ value.title + "</strong></p><p><strong>" + value.date +"</strong></p></li>";
-				
-			//listHtml += "<li><a href='#' onclick=window.open('" + value.link + "','_blank','location=yes,toolbar=yes,allowInlineMediaPlayback=yes')><img class='ui-circle ui-mini ui-padding' src='"+ value.image +"'><h2>" + value.name +  "</h2><p><strong>"+ value.title + "</strong></p><p><strong>" + value.date +"</strong></p></a><a href='#' onclick=window.open('http://www.stat8.net','_system')></a></li>";
-				
-				
-			//this works for inappbrowser 	listHtml += "<li><a href='#' onclick=window.open('" + value.link + "','_blank','location=yes,toolbar=yes,allowInlineMediaPlayback=yes')><img class='ui-circle ui-mini ui-padding' src='"+ value.image +"'><h2>" + value.name +  "</h2><p><strong>"+ value.title + "</strong></p><p><strong>" + value.date +"</strong></p></li>";
-				
-		
-					
-					
 					listHtml += "<li data-id=" + value.id + "><a href='#'><b>" + value.lastname +  " , "+ value.firstname + "</b></a></li>";
 					
 				});//end each
@@ -55,8 +42,14 @@ $(document).ready(function(){
 			$(document).on('pagebeforeshow', '#page2', function() {  
          var url = "http://www.stat8.net/iTeachTest/iTeacherDoc.cfc?method=getarch&returnformat=json"
 		 var classHtml = "";
-		 $.post(url,{ searchName: teacher_id } , function(response){
+		 $.get(url,{ searchName: teacher_id } , function(response){
+			 
 			 var json = $.parseJSON(response);
+			 
+			  if (json.length == 0){
+				  
+				 classHtml = "<li>There are no classess loaded for this teacher.</li>";
+			 }
 			 $.each(json, function(key, value){  
 			
 			classHtml += "<li data-id=" + value.id + "><a href='#'><b>" + value.test + "</b></a></li>";
@@ -82,8 +75,16 @@ $(document).ready(function(){
 	$(document).on('pagebeforeshow', '#page3', function() {  
          var url = "http://www.stat8.net/jquery/iTeacherDoc.cfc?method=getcontent&returnformat=json"
 		 var contentHtml = "";
-		 $.post(url,{ searchName: class_id } , function(response){
+		 $.get(url,{ searchName: class_id } , function(response){
+			
 			 var json = $.parseJSON(response);
+			 
+			  if (json.length == 0){
+				  
+				 contentHtml = "<li>There is no content available for this teacher.</li>";
+			 }
+			 
+			 
 			 $.each(json, function(key, value){  
 			
 			
@@ -114,12 +115,18 @@ $(document).ready(function(){
 	$(document).on('pagebeforeshow', '#page4', function() {  
          var url = "http://www.stat8.net/jquery/iTeacherDoc.cfc?method=getdocs&returnformat=json"
 		 var documentHtml = "";
-		 $.post(url,{ searchName: class_id, content: content_id } , function(response){
+		 $.get(url,{ searchName: class_id, content: content_id } , function(response){
 			 var json = $.parseJSON(response);
+			 
+			  if (json.length == 0){
+				  
+				 documentHtml = "<li>There are no documents loaded for this teacher.</li>";
+			 }
+			 
 			 $.each(json, function(key, value){  
 			
 			
-			documentHtml += "<li><a href='#' onclick=window.open('" + value.showlink + "','_blank','toolbar=yes,allowInlineMediaPlayback=yes')><b>" + value.date + "&nbsp;&nbsp;-&nbsp;&nbsp;" + value.name + "</b></a><a href='#' onclick=window.open('" + value.showlink + "','_system')></a></li>";
+			documentHtml += "<li><a href='#' onclick=window.open('" + value.showlink + "','_blank','location=no,allowInlineMediaPlayback=yes')><b>" + value.date + "&nbsp;&nbsp;-&nbsp;&nbsp;" + value.name + "</b></a><a href='#' onclick=window.open('" + value.showlink + "','_system')></a></li>";
 			 
 			 });//end each
 			 $("#documentList").html(documentHtml);
