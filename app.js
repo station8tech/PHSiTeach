@@ -78,6 +78,7 @@ $(document).ready(function(){
 	$(document).on('pagebeforeshow', '#page3', function() {  
          var url = "http://www.stat8.net/jquery/iTeacherDoc.cfc?method=getcontent&returnformat=json";
 		 var contentHtml = "";
+		  $("#contentList").html(contentHtml);
 		 $.post(url,{ searchName: class_id } , function(response){
 			
 			 var json = $.parseJSON(response);
@@ -118,6 +119,7 @@ $(document).ready(function(){
 	$(document).on('pagebeforeshow', '#page4', function() {  
          var url = "http://www.stat8.net/jquery/iTeacherDoc.cfc?method=getdocs&returnformat=json";
 		 var documentHtml = "";
+		 $("#documentList").html(documentHtml);
 		 $.post(url,{ searchName: class_id, content: content_id } , function(response){
 			 var json = $.parseJSON(response);
 			 
