@@ -28,10 +28,10 @@
 	     
        
     <div data-role="header" data-theme="a"  data-id="persistent" data-position="fixed" >
-	    <a href="#" onClick="history.go(-1)"  data-icon="back" data-iconpos="notext"></a>
+	   
 	    
        <h1 class="header-title">PHSiTeach</h1>
-     <a href="#search" data-icon="search" data-iconpos="notext"></a>
+     <a href="#search" data-icon="search" data-iconpos="notext" class="ui-btn-right"></a>
 <div data-role="navbar" data-theme="a">
 	<ul>
 		<li><a href="#page"><center>Teacher List</center></a></li>
@@ -51,7 +51,7 @@
     
     
     
-     <div data-role="page" id="page2" data-dom-cache="false">
+     <div data-role="page" id="page2" >
       
                       
      <div data-role="header" data-theme="a"  data-id="persistent" data-position="fixed" data-tap-toggle="false"  >
@@ -77,7 +77,7 @@
     
   
   
-  <div data-role="page" id="page3" data-dom-cache="false">
+  <div data-role="page" id="page3" >
       
                       
      <div data-role="header" data-theme="a"  data-id="persistent" data-position="fixed" >
@@ -99,7 +99,7 @@
     
     
     
-      <div data-role="page" id="page4" data-dom-cache="false" >
+      <div data-role="page" id="page4"  >
       
                         
                       
@@ -120,6 +120,36 @@
          <ul data-role="listview" data-split-icon="action" data-split-theme="a" data-inset="false" data-theme="a" id="documentList"></ul>
     </div> 
     
+    
+    
+    
+     <div data-role="page" id="search"  >
+      
+                        
+                      
+      <div data-role="header" data-theme="a"  data-id="persistent" data-position="fixed" >
+	    <a href="#" onClick="history.go(-1)"  data-icon="back" data-iconpos="notext"></a>
+	    
+       <h1 class="header-title">PHSiTeach Search</h1>
+     <a href="#search" data-icon="search" data-iconpos="notext"></a>
+<div data-role="navbar" data-theme="a">
+	<ul>
+		<li data-icon="false"><a href="#page"><center>Teacher List</center></a></li>
+		<li  data-icon="false"><a  href="#" onclick=window.open('http://www.providencehigh.net','_blank','location=no,allowInlineMediaPlayback=yes')><center>ProvidenceHigh.net</center></a></li>
+		<li  data-icon="false"><a href="#" onclick=window.open('http://familylink.providencehigh.net/Login.aspx','_blank','location=no,allowInlineMediaPlayback=yes')><center>Grades-FamilyLink</center></a></li>
+	</ul>
+</div><!-- /navbar -->
+         </div>
+         
+         <form action="#" method="post" id="searchForm">
+                    <input type="search"  id="userSearch" data-mini="true"
+                    value=""  autocorrect="off" autocomplete="off" autocapitalize="off" />
+              
+                <input type="submit" value="Submit Button"  data-theme="a"/>
+                </form>
+         
+         <ul data-role="listview" data-split-icon="action" data-split-theme="a" data-inset="false" data-theme="a" id="searchList"></ul>
+    </div> 
    
     
     

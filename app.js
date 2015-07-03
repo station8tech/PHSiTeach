@@ -7,7 +7,7 @@ $(document).ready(function(){
 			
 			var listHtml = "";
 			
-			var url = "http://www.stat8.net/iTeachTest/iTeacherDoc.cfc?method=getintList&returnformat=json"
+			var url = "http://www.stat8.net/iTeachTest/iTeacherDoc.cfc?method=getintList&returnformat=json";
 			$.post(url, function(response){
 			var json = $.parseJSON(response);
 			
@@ -40,7 +40,7 @@ $(document).ready(function(){
 			//start of page2
 			
 			$(document).on('pagebeforeshow', '#page2', function() {  
-         var url = "http://www.stat8.net/iTeachTest/iTeacherDoc.cfc?method=getarch&returnformat=json"
+         var url = "http://www.stat8.net/iTeachTest/iTeacherDoc.cfc?method=getarch&returnformat=json";
 		 var classHtml = "";
 		 $.post(url,{ searchName: teacher_id } , function(response){
 			 
@@ -73,7 +73,7 @@ $(document).ready(function(){
 			});//click event for list
 
 	$(document).on('pagebeforeshow', '#page3', function() {  
-         var url = "http://www.stat8.net/jquery/iTeacherDoc.cfc?method=getcontent&returnformat=json"
+         var url = "http://www.stat8.net/jquery/iTeacherDoc.cfc?method=getcontent&returnformat=json";
 		 var contentHtml = "";
 		 $.post(url,{ searchName: class_id } , function(response){
 			
@@ -113,7 +113,7 @@ $(document).ready(function(){
 			
 			//start of page4
 	$(document).on('pagebeforeshow', '#page4', function() {  
-         var url = "http://www.stat8.net/jquery/iTeacherDoc.cfc?method=getdocs&returnformat=json"
+         var url = "http://www.stat8.net/jquery/iTeacherDoc.cfc?method=getdocs&returnformat=json";
 		 var documentHtml = "";
 		 $.post(url,{ searchName: class_id, content: content_id } , function(response){
 			 var json = $.parseJSON(response);
@@ -138,6 +138,50 @@ $(document).ready(function(){
      });// end of page 4 document list
 			
 			
+			
+			
+			
+			
+			
+			//search page
+			
+			$('#searchForm').submit(function(event){
+			
+			event.preventDefault();
+			event.stopPropagation();
+		    var searchHtml = "";
+		    
+		    var searchVariable = $("#userSearch").val();
+		var url = "http://www.stat8.net/iTeachTest/iTeacherDoc.cfc?method=getsearch&returnformat=json";
+			
+						
+			//checks for empty form values
+				if(!searchVariable){
+   alert("Please complete the search form.");
+  return false;
+}
+	   
+		
+			$.post(url,{ searchName: searchVariable } , function(response){
+			var json = $.parseJSON(response);
+			
+			 $.each(json, function(key, value){  
+			
+			
+			searchHtml += "<li><a href='#' onclick=window.open('" + value.showlink + "','_blank','location=no,allowInlineMediaPlayback=yes')><b>" + value.date + "<br/>" + value.lastname +  "," + value.firstname + "<br/>" + value.description + "</b></a><a href='#' onclick=window.open('" + value.showlink + "','_system')></a></li>";
+			 
+			 });//end each
+			 
+			 $("#searchList").html(searchHtml);
+			 $('ul').listview('refresh');
+
+			
+			
+						
+			});//end post
+			
+			});//end formSubmit
+            
 			
 			
 			
