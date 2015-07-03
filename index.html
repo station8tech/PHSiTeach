@@ -3,6 +3,8 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="width=device-width, initial-scale=1"> 
+	
+	
 	 <link rel="stylesheet" type="text/css" href="jquery.mobile-1.4.5.min.css" /> 
 	
 
@@ -32,6 +34,8 @@
 	    
        <h1 class="header-title">PHSiTeach</h1>
      <a href="#search" data-icon="search" data-iconpos="notext" class="ui-btn-right"></a>
+     
+     
 <div data-role="navbar" data-theme="a">
 	<ul>
 		<li><a href="#page"><center>Teacher List</center></a></li>
@@ -39,12 +43,13 @@
 		<li><a href="#" onclick=window.open('http://familylink.providencehigh.net/Login.aspx','_blank','location=no,allowInlineMediaPlayback=yes')><center>Grades-FamilyLink</center></a></li>
 	</ul>
 </div><!-- /navbar -->
+         
          </div>
    
          
          
         
-         <ul data-role="listview" data-inset="false" data-theme="a" id="teacherList"></ul>
+         <ul data-role="listview" data-inset="false"  id="teacherList"></ul>
          
          
     </div> 
@@ -140,12 +145,12 @@
 	</ul>
 </div><!-- /navbar -->
          </div>
-         
+         <p align="center">Search by any part of the teacher file name.</p>
          <form action="#" method="post" id="searchForm">
                     <input type="search"  id="userSearch" data-mini="true"
                     value=""  autocorrect="off" autocomplete="off" autocapitalize="off" />
               
-                <input type="submit" value="Submit Button"  data-theme="a"/>
+                <input type="submit" value="Search"  data-theme="a"/>
                 </form>
          
          <ul data-role="listview" data-split-icon="action" data-split-theme="a" data-inset="false" data-theme="a" id="searchList"></ul>

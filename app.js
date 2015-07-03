@@ -15,7 +15,7 @@ $(document).ready(function(){
 			$.each(json, function(key, value){  
 				
 				
-					listHtml += "<li data-id=" + value.id + "><a href='#'><b>" + value.lastname +  " , "+ value.firstname + "</b></a></li>";
+					listHtml += "<li data-id=" + value.id + "><a href='#'>" + value.lastname +  " , "+ value.firstname + "</a></li>";
 					
 				});//end each
 			
@@ -40,8 +40,11 @@ $(document).ready(function(){
 			//start of page2
 			
 			$(document).on('pagebeforeshow', '#page2', function() {  
+				
+				
          var url = "http://www.stat8.net/iTeachTest/iTeacherDoc.cfc?method=getarch&returnformat=json";
 		 var classHtml = "";
+		 $("#classList").html(classHtml);
 		 $.post(url,{ searchName: teacher_id } , function(response){
 			 
 			 var json = $.parseJSON(response);
@@ -137,8 +140,19 @@ $(document).ready(function(){
 		
      });// end of page 4 document list
 			
+			//clear search form
+			$('#searchForm').click(function(){
+				var searchHtml = "";
+				
+				$("#searchList").html(searchHtml);
+			});
 			
-			
+			$(document).on('pagebeforeshow', '#search', function() {  
+				var searchHtml = "";
+				$("#userSearch").val("");
+				
+				$("#searchList").html(searchHtml);
+				});
 			
 			
 			
@@ -164,7 +178,10 @@ $(document).ready(function(){
 		
 			$.post(url,{ searchName: searchVariable } , function(response){
 			var json = $.parseJSON(response);
-			
+			  if (json.length == 0){
+				  
+				 searchHtml = "<li>No results for <i>" + searchVariable + "</i> were found. </li>";
+			 }
 			 $.each(json, function(key, value){  
 			
 			
