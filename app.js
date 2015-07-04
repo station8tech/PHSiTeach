@@ -93,7 +93,7 @@ $(document).ready(function(){
 	$(document).on('pagebeforeshow', '#page3', function() {  
 				
 				var contentHeaderHtml = "";
-			console.log(className);
+			
 				contentHeaderHtml += "" + firstName + " " + lastName + " - "  + className + " Content" ;
 			 
 			 $("#contentHeaderName").html(contentHeaderHtml);
@@ -107,7 +107,7 @@ $(document).ready(function(){
 			 
 			  if (json.length == 0){
 				  
-				 contentHtml = "<li>There is no content available for this teacher.</li>";
+				 contentHtml = "<li>There is no content available for this class.</li>";
 			 }
 			 
 			 
