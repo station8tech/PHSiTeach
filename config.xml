@@ -6,11 +6,11 @@
 <gap:plugin name="com.phonegap.plugin.statusbar" version="1.1.0" />
 <gap:plugin name="org.apache.cordova.inappbrowser" version="0.5.2" />
 <gap:plugin name="nl.x-services.plugins.backgroundaudio" version="1.0.0" />
-
+<gap:platform name="ios" />
 <preference name="webviewbounce" value="false" />
 
 <preference name="deployment-target" value="7.0" />
-<preference name="target-device" value="universal" />
+<preference name="target-device" value="tablet" />
 
 
 
@@ -18,19 +18,24 @@
 
 <access origin="*" />
 <description>
-PHSiTeach is an app that provides teachers with the ability to quickly distribute educational content to their students.
+PHS iTeach is an app that allows teachers and administrators of Providence Junior-Senior High School to share their educational content with their students. Lesson plans, presentations, videos, and announcements are all examples of content that can be shared with students.
 </description>
 
 <author href="https://www.stat8.net" email="support@stat8.net">
 Station Eight Technologies
 </author>
 
+<icon src="icon-76.png" gap:platform="ios" width="76" height="76" />
 
+<icon src="icon-76@2x.png" gap:platform="ios" width="152" height="152" />
 
+<icon src="icon-72.png" gap:platform="ios" width="72" height="72" />
 
+<icon src="icon-72@2x.png" gap:platform="ios" width="144" height="144" />
 
+<gap:splash src="Default-Landscape@2x.png" gap:platform="ios" width="2048" height="1536" />
 
-
+<gap:splash src="Default-Portrait@2x.png" gap:platform="ios" width="1536" height="2048" />
 
 
 </widget>
