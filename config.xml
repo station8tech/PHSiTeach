@@ -26,6 +26,8 @@ PHS iTeach is an app that allows teachers and administrators of Providence Junio
 Station Eight Technologies
 </author>
 
+<icon src="icon.png" />
+
 <icon src="icon-76.png" gap:platform="ios" width="76" height="76" />
 
 <icon src="icon-76@2x.png" gap:platform="ios" width="152" height="152" />
