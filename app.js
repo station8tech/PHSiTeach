@@ -3,14 +3,6 @@ $(document).ready(function(){
 	
 		
 
-		
-		
-		
-		
-		
-		
-		
-		
 	
 			
 			var listHtml = "";
