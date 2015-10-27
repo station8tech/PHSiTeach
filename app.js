@@ -2,7 +2,7 @@
 $(document).ready(function(){
 	
 		
-		 
+		 $.mobile.hashListeningEnabled = false;
 	
 			
 			var listHtml = "";
