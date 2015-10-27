@@ -9,7 +9,9 @@
 	
 
 <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-
+<script type="text/javascript">  
+$(document).bind("mobileinit", function(){ $.mobile.hashListeningEnabled = false; });   
+</script>
 <script src="jquery.mobile-1.4.5.min.js"></script>
 
 
@@ -65,7 +67,7 @@
      <div data-role="header" data-theme="a"  data-id="persistent" data-position="fixed" data-tap-toggle="false" >
 	   <br>
 	   <center><img src="providence_icon.png" width="300"></center>
-	    <a href="#"  onclick="history.go(-1)" data-icon="back" data-iconpos="notext"></a>
+	    <a href="#"  onclick="history.go(-1);" data-icon="back" data-iconpos="notext"></a>
 	    
        <h1 class="header-title" id="teacherName"></h1>
        <a href="#search" data-icon="search" data-iconpos="notext"></a>
@@ -93,7 +95,7 @@
      <div data-role="header" data-theme="a"  data-id="persistent" data-position="fixed" >
 	      <br>
 	   <center><img src="providence_icon.png" width="300"></center>
-	    <a href="#" onclick="history.go(0)"   data-icon="back" data-iconpos="notext"></a>
+	    <a href="#" onclick="history.go(-1)"   data-icon="back" data-iconpos="notext"></a>
 	    
        <h1 class="header-title" id="contentHeaderName" ></h1>
      <a href="#search" data-icon="search" data-iconpos="notext"></a>
