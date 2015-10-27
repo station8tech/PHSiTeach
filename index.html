@@ -9,7 +9,12 @@
 	
 
 <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-
+<!---added to fix back button ios9 issue -->
+<script type="text/javascript">
+  $(document).bind("mobileinit", function(){
+  $.mobile.hashListeningEnabled = false;
+  });
+</script> 
 
 
 <script src="jquery.mobile-1.4.5.min.js"></script>
